@@ -15,6 +15,7 @@ import java.util.Date;
 public class ProjectionFilm implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Temporal(TemporalType.DATE)
     private Date dateProjection;
     private double prix;
     @ManyToOne

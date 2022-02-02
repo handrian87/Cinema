@@ -7,13 +7,15 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Date;
 
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor
 public class Seance implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date heureDebut;
     @OneToMany(mappedBy = "seance")
     private Collection<ProjectionFilm> projectionFilm;
 }
