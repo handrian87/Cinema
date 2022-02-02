@@ -1,4 +1,4 @@
-package com.projet.cinema.dao;
+package com.projet.cinema.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +13,7 @@ public class Ticket implements Serializable {
     private Long id;
     private String nomClient;
     private double prix;
+    @Column(unique = true)
     private int codePaiement;
     private boolean reservee;
     @ManyToOne

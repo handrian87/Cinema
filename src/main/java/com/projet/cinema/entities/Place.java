@@ -1,4 +1,4 @@
-package com.projet.cinema.dao;
+package com.projet.cinema.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,13 +10,13 @@ import java.util.Collection;
 
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor
-public class Ville implements Serializable {
+public class Place implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private int numero;
     private double longitude, latitude, altitude;
-    // Dans le code suivant, dans mappedBy = "ville", "ville"
-    // se trouve dans la variable/l'attribut définie dans la Class Cinema.
-    @OneToMany(mappedBy = "ville")
-    private Collection<Cinema> cinemas;
+    @ManyToOne
+    private Salle salle;
+    @OneToMany(mappedBy = "place")
+    private Collection<Ticket> ticket;
 }

@@ -1,4 +1,4 @@
-package com.projet.cinema.dao;
+package com.projet.cinema.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
