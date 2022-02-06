@@ -116,12 +116,12 @@ public class CinemaInitServiceImplementation implements ICinemaInitService {
     public void initFilms() {
         double[] duree = new double[]{1, 1.5, 2, 1.25, 2.5, 3};
         List<Categorie> categorieList = categorieRepository.findAll();
-        Stream.of("Game of Thrones", "Seigneur des anneaux", "The godfather", "Hitman", "Mission impossible","Kung Fu soccer")
+        Stream.of("Game", "Seigneur", "Godfather", "Hitman", "Mission","Kung")
                 .forEach(movieTitle -> {
                     Film film = new Film();
                     film.setTitre(movieTitle);
                     film.setDuree(duree[new Random().nextInt(duree.length)]);
-                    film.setPhoto(movieTitle.replaceAll(" ",""));
+                    film.setPhoto(movieTitle.replaceAll(" ","")+".jpg");
                     film.setCategorie(categorieList.get(new Random().nextInt(categorieList.size())));
                     filmRepository.save(film);
                 }
