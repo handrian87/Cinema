@@ -8,6 +8,7 @@ import com.projet.cinema.entities.Film;
 import com.projet.cinema.entities.Ticket;
 import lombok.Data;
 import org.springframework.http.MediaType;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
@@ -56,6 +57,7 @@ public class CinemaRestController {
     // on va utiliser l'annotation @RequestBody, pour dire que les données du Ticket
     // sont envoyées dans le corps de la requête en format json.
     @PostMapping("/payerTickets")
+    @Transactional
     public List<Ticket> payerTicket(@RequestBody TicketForm ticketForm) {
         List<Ticket> ticket = new ArrayList<Ticket>();
         ticketForm.getTickets().forEach(idTicket -> {

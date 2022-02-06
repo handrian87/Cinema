@@ -1,5 +1,6 @@
 package com.projet.cinema.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,7 @@ public class ProjectionFilm implements Serializable {
     @ManyToOne
     private Salle salle;
     @OneToMany(mappedBy = "projectionFilm")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Ticket> ticket;
     @ManyToOne
     private Seance seance;
