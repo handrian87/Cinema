@@ -11,10 +11,12 @@
     <groupId>com.projet</groupId>
     <artifactId>Cinema</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>Cinema</name>
     <description>Cinema</description>
     <properties>
         <java.version>1.8</java.version>
+        <start-class>com.projet.cinema.CinemaApplication</start-class>
     </properties>
     <dependencies>
         <dependency>

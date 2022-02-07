@@ -1,5 +1,6 @@
 package com.projet.cinema.service;
 
+
 public interface ICinemaInitService {
     public void initVilles();
     public void initCinemas();

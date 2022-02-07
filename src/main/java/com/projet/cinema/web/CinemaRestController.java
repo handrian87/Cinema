@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 public class CinemaRestController {
     private FilmRepository filmRepository;
     private CategorieRepository categorieRepository;
